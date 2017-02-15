@@ -30,6 +30,7 @@ func main() {
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 
 	defer resp.Body.Close()
@@ -38,6 +39,7 @@ func main() {
 	err = json.NewDecoder(resp.Body).Decode(&cred)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 
 	fmt.Fprintf(os.Stdout, "[%s]\naws_access_key_id=%s\naws_secret_access_key=%s\naws_session_token=%s\n", section, cred.AccessKeyID, cred.SecretAccessKey, cred.Token)
