@@ -40,5 +40,5 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 	}
 
-	fmt.Fprintf(os.Stdout, "[%s]\naws_access_key_id=%s\naws_secret_access_key=%s", section, cred.AccessKeyID, cred.SecretAccessKey)
+	fmt.Fprintf(os.Stdout, "[%s]\naws_access_key_id=%s\naws_secret_access_key=%s\n", section, cred.AccessKeyID, cred.SecretAccessKey)
 }
